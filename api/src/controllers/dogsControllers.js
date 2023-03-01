@@ -8,8 +8,8 @@ const getAllDogs = async () => {
     const data = getAllApi.map(e => { return {
         id: e.id,
         name: e.name,
-        image: e.image,
-        weight: e.weight,
+        image: e.image.url,
+        weight: e.weight.metric,
         height: e.height,
         life_span: e.life_span,
         temperament: e.temperament
@@ -87,11 +87,11 @@ const getDogsByName = async (name) => {
 
         where:{name:{[Op.like]:`${name}`}}})
         
-        console.log("basadate", basadate)
+     /*    console.log("basadate", basadate) */
       const getAllDogsApi =  (
           await axios.get(`https://api.thedogapi.com/v1/breeds/search?q=${name}`)
         ).data; 
-      console.log("getall", getAllDogsApi)
+     /*  console.log("getall", getAllDogsApi) */
        
         return [...basadate, ...getAllDogsApi]
       

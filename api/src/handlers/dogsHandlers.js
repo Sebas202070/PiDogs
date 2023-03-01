@@ -38,9 +38,9 @@ const postDogsHandler = async (req,res) => {
             
         
     })
-    console.log("1",temperamentDb)
+   /*  console.log("1",temperamentDb) */
     newDOG.addTemperament(temperamentDb)
-    console.log("2", newDOG )
+   /*  console.log("2", newDOG ) */
     res.status(200).json({newDOG, status: "Success!!"})
         
     } catch (error) {
