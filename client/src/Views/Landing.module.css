@@ -1,0 +1,75 @@
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+ }
+
+
+
+
+
+
+.back {
+    background-image: url("https://marketplace.canva.com/EAD29RnUHXo/2/0/1600w/canva-turquoise-dogs-and-paw-print-cute-zoom-virtual-background-6nPSmRqEqWw.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 570px;
+    padding: 20px;
+/*     margin-top: 20px; */
+   
+    
+}
+
+.titles {
+    display: flex;
+    padding: 2px;
+ /*    justify-content: center; */
+    margin-top: -
+    10px;
+    margin-left: 254px;
+    /* margin-left: 357px; */
+    font-size: 75px;
+    border: 2px solid black ;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh7Ox0E6WjtS-j9RNZpVxoMboeirE0SLuyphXfgEb_J0hbzagBJwbz5JUtKWRN1dblkWA&usqp=CAU");
+    /* width: 1337px; */
+    width: fit-content;
+    border-radius: 20px; 
+   
+
+
+
+    
+}
+
+.button {
+ 
+ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh7Ox0E6WjtS-j9RNZpVxoMboeirE0SLuyphXfgEb_J0hbzagBJwbz5JUtKWRN1dblkWA&usqp=CAU");
+ cursor: pointer;
+ color:black;
+ font-size: 20px;
+ text-decoration: black;
+ font-family: arial black;
+ padding: 3px 12px;
+ margin-left: 550px;
+ margin-top: -40px;
+ position: relative;
+ border: black solid 1px;
+ transition: 0.1s;
+ overflow: hidden;
+ border-radius: 20px;
+  }
+
+ .button:hover{
+ 
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh7Ox0E6WjtS-j9RNZpVxoMboeirE0SLuyphXfgEb_J0hbzagBJwbz5JUtKWRN1dblkWA&usqp=CAU");
+color: black;
+transform: scale(1.1);
+ }
+
+ 

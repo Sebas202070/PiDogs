@@ -31,13 +31,22 @@ const getDogsByIdHandler = async (req, res) => {
 }
 
 const postDogsHandler = async (req,res) => {
-    try {const {name, height, weight,life_span, temperaments } = req.body
-    const newDOG = await Dog.create(({name, height, weight,life_span}))
+    try {const {name, min_height, max_height, min_weight,max_weight,min_life_span,max_life_span, temperaments } = req.body
+   
+
+
+    
+ 
+  
+  
+  
+    
+    const newDOG = await Dog.create({name, height: `${min_height} - ${max_height}`, weight:`${min_weight} - ${max_weight}`,life_span:`${min_life_span} - ${max_life_span}`})
     const temperamentDb = await Temperament.findAll({
         where: {name: temperaments}
             
         
-    })
+    }) 
    /*  console.log("1",temperamentDb) */
     newDOG.addTemperament(temperamentDb)
    /*  console.log("2", newDOG ) */
