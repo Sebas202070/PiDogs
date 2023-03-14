@@ -40,7 +40,7 @@ const rootReducer = (state = initialState, action) => {
 
     case FILTER_BY_TEMPERAMENTS:
       if (action.payload) {
-        const filter = state.filtrado.filter(
+        const filter = state.dogs.filter(
           (d) =>
             (d.temperament && d.temperament.includes(action.payload)) ||
             (d.temperaments &&
