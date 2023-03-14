@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     
- background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh7Ox0E6WjtS-j9RNZpVxoMboeirE0SLuyphXfgEb_J0hbzagBJwbz5JUtKWRN1dblkWA&usqp=CAU");
+ background-image: url("https://previews.123rf.com/images/yupiramos/yupiramos1308/yupiramos130801030/21505969-patr%C3%B3n-de-perro-sobre-fondo-naranja-ilustraci%C3%B3n-vectorial.jpg");
 
  /* 
     /* background-size: auto; */
@@ -10,9 +10,9 @@
     /* padding: 40px; */
     background-repeat: no-repeat;
     background-size: cover;
-    height: 580px;
+    height: 720px;
     padding: 20px;
-  /*   position: fixed; */
+/*     position: absolute; */
 
 }
 
@@ -21,9 +21,12 @@
    margin-left: 170px;
    
  color: black;
- margin-top: -40px;
+ margin-top: -50px;
 /*  position: fixed; */
  font-size: 17px;
+ 
+
+
 
   
   
@@ -46,8 +49,15 @@
 
 .temps {
     color: black;
-  background-color: burlywood;
-    position: fixed;
+
+/* display: flex; */
+/* flex-wrap: wrap; */
+position: fixed;
+display: flex;
+flex-direction: row;
+margin-left: -40px;
+cursor: pointer;
+
   
   
   
@@ -82,18 +92,18 @@ font-size: 50px;
     margin-left: 190px;
   /*   background-color: aliceblue; */
     font-weight: 10px;
-    margin-top: -80px;
-  /*   position: fixed; */
+    margin-top: -10px;
+  
 }
 
 .button {
     background-color: black;
-    cursor: pointer;
+   
     color:white;
   /*   padding: 7px 12px; */
   /*   margin-left: 570px */;
    /*  margin-bottom: 80px; */
-    margin-top: 40px;
+    margin-top: 20px;
    /*  margin-left: 30px; */
 
     border: black solid 1px;
@@ -102,4 +112,36 @@ font-size: 50px;
     transition: 0.1s;
     overflow: hidden;
     font-size: 20px;
+    cursor: pointer;
+}
+.button:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+/* .ul { */
+/*   margin-left: 40px; */
+/* } */
+
+.li{
+margin-top: 20px;
+}
+
+.x{
+  color: white;
+border: 1px solid black;
+background-color: black;
+width: fit-content;
+height: fit-content;
+align-items: center;
+justify-items: center;
+font-size: 12px;
+margin-top: -55px;
+cursor: pointer;
+transition: 0.1s;
+}
+
+.x:hover {
+  transform: scale(1.1);
 }

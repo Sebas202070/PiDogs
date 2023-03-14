@@ -6,6 +6,7 @@ import Search from "../Components/Search";
 import {
   filterBySource,
   filterByTemperaments,
+  filterForChildren,
   getAllDogs,
   getAllTemperaments,
   orderByName,
@@ -15,6 +16,7 @@ import styled from "./Home.module.css";
 
 function Home() {
   const dogs = useSelector((state) => state.dogs);
+  const dogsfilter = useSelector((state) => state.filtrado)
   const temperaments = useSelector((state) => state.temperaments);
   const [alfabetical, setAlfabetical] = useState("");
   const [weight, setWeight] = useState("");
@@ -22,10 +24,10 @@ function Home() {
   const dispatch = useDispatch();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const videogamesPerPage = 8;
-  const ultimo = currentPage * videogamesPerPage;
-  const primero = ultimo - videogamesPerPage;
-  const dogies = dogs.slice(primero, ultimo);
+  const dogsPerPage = 8;
+  const ultimo = currentPage * dogsPerPage;
+  const primero = ultimo - dogsPerPage;
+  const dogies = dogsfilter.slice(primero, ultimo);
   /* console.log("hola1", games) */
 
   const setPagination = (page) => {
@@ -61,6 +63,11 @@ function Home() {
     console.log("w", event.target.value)
   };
 
+  const handleChild = (event) => {
+    event.preventDefault();
+    dispatch(filterForChildren(event.target.value))
+  }
+
   return (
     <div className={styled.back1}>
       <div className={styled.background}>
@@ -94,6 +101,24 @@ function Home() {
             </option>
           </select>
         </div>
+ 
+        
+       
+{/* <div className="filter"> */}
+{/*   <label className={styled.label}> Mascotas recomendadas para niños, adultos y ancianos:</label> */}
+{/*   <select key="childd" onChange={(event) => handleChild(event)}> */}
+{/*     <option key="ALLCREATION" defaultValue="ALL"></option> */}
+{/*     <option key="child" value="Mascotas para niños"> */}
+{/*       Niños */}
+{/*     </option> */}
+{/*     <option key="adult" value="Mascotas para adultos y ancianos"> */}
+{/*       Adultos y Ancianos */}
+{/*     </option> */}
+{/*     </select> */}
+{/*     </div>       */}
+
+
+
         <div className="filter">
           <label className={styled.label}> Ordena por Nombre: </label>
           <select
@@ -151,8 +176,8 @@ function Home() {
         
         <div>
           <Paginate
-            videogamesPerPage={videogamesPerPage}
-            allVideogames={dogs.length}
+            dogsPerPage={dogsPerPage}
+            allDogs={dogsfilter.length}
             setPagination={setPagination}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

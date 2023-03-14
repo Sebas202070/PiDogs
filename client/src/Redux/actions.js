@@ -10,6 +10,7 @@ export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE"
 export const ORDER_BY_NAME = "ORDER_BY_NAME"
 export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT"
 export const SHOW_DOG = "SHOW_DOG"
+export const FILTER_FOR_CHILDREN = "FILTER_FOR_CHILDREN"
 
 export const getAllDogs = () => {
     return async function(dispatch) {
@@ -98,15 +99,13 @@ export const orderByWeight = (payload) => {
     }
 }
 
-export const showDog = (dog) => {
-    return async function(dispatch) {
-        const apic = await axios.get("http://localhost:3001/dogs", dog )
-        const dogc = apic.data
-       
-        dispatch({
-         type: SHOW_DOG,
-         payload: dogc
-        })
-     }
- }
+
+
+
+export const filterForChildren = (payload) => {
+    return {
+        type: FILTER_FOR_CHILDREN,
+        payload
+    }
+}
 

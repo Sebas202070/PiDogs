@@ -1,11 +1,11 @@
 import React from "react";
 import style from './Paginate.module.css'
 
-export function Paginate({allVideogames, videogamesPerPage, setPagination, currentPage, setCurrentPage}) {//all videogames = videogames.length => el estado videogames!
+export function Paginate({allDogs, dogsPerPage, setPagination, currentPage, setCurrentPage}) {//all videogames = videogames.length => el estado videogames!
 
 	const pageNumber = []  //se declara array vacio para guardar los numeros de pagina
 
-	for(let i = 1; i <= Math.ceil(allVideogames/videogamesPerPage); i++){    //se recorre el array empezando por la hoja uno mientras que i sea menor a allVideogames/videogamesPerPage va a seguir iterando
+	for(let i = 1; i <= Math.ceil(allDogs/dogsPerPage); i++){    //se recorre el array empezando por la hoja uno mientras que i sea menor a allVideogames/videogamesPerPage va a seguir iterando
 		pageNumber.push(i)													//allVideogames es donde estan todos los videojuegos y videojuegos es la cantidad de videojuegos por hoja osea 15
 	}																		//por cada iteracion va pusheando al array de  pageNumber cada pagina que sea ppsible crear
 
@@ -22,10 +22,10 @@ export function Paginate({allVideogames, videogamesPerPage, setPagination, curre
 	return(
 		<div className={style.paginate_container}>
 			<div className={style.prev_next}>
-				<button className={style.next_prev_btn} onClick={() => handlePrev()} disabled={allVideogames < 15}>prev</button>
+				<button className={style.next_prev_btn} onClick={() => handlePrev()} disabled={allDogs < 15}>prev</button>
 			</div>
 				<div className={style.pages}>
-					{allVideogames < 15 ? 
+					{allDogs < 15 ? 
 					<div key='pagination'> {setPagination(1)}</div> : 
 					pageNumber && pageNumber.map(n =>(
 						<div className={style.page}>
@@ -35,7 +35,7 @@ export function Paginate({allVideogames, videogamesPerPage, setPagination, curre
 					}
 				</div>
 				<div className={style.prev_next}>
-					<button className={style.next_prev_btn} onClick={() => handleNext()} disabled={allVideogames < 15}>next</button>
+					<button className={style.next_prev_btn} onClick={() => handleNext()} disabled={allDogs < 15}>next</button>
 				</div>
 		</div>
 	)
